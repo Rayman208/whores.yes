@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title></title>
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href=".\views\template\style.css">
+    <link rel="stylesheet" type="text/css" href="\views\template\style.css">
   </head>
   <body>
     <div id="wrapper">
