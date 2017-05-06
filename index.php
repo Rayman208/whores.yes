@@ -20,7 +20,6 @@
   }
 
   require 'controllers\controller_'.$module.'.php';
-
   $controller = new $module;
 
   if(count($url_parts)==2)

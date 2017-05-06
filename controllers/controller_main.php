@@ -1,5 +1,5 @@
 <?php
-require '.\views\view_general.php';
+require '\views\view_general.php';
 
 class main
 {
