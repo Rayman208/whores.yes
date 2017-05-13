@@ -7,7 +7,7 @@ $skin_colors = $this->db_worker->get_skin_colors();
 ?>
 
 <h2>Добавить девочку</h2>
-<form action="">
+<form action="" method="post">
   <input type="text" name="name" placeholder="Имя здесь"><br/>
   <input type="text" name="age" placeholder="Возраст здесь"><br/>
   <input type="text" name="hieght" placeholder="Рост здесь"><br/>
@@ -34,14 +34,22 @@ $skin_colors = $this->db_worker->get_skin_colors();
   <?php } ?>
   </select>
   <br/>
-  
-  <input type="text" name="price" placeholder="Цена здесь"><br/>
+
+
   <select>
   <?php for ($i=0; $i <count($quality_categories) ; $i++) { ?>
     <option value="<?=$quality_categories[$i]["id"]?>"><?=$quality_categories[$i]["name"]?></option>
   <?php } ?>
   </select>
   <br/>
+
+  <?php for ($i=0; $i <count($services) ; $i++) { ?>
+    <label><input type="checkbox" name="services" value="<?=$services[$i]["id"]?>"/> <?=$services[$i]["name"]?></label><br/>
+  <?php } ?>
+
+  <input type="text" name="price" placeholder="Цена здесь"><br/>
+
+  <input type="submit" name="" value="Продать">
 
 
 </form>
