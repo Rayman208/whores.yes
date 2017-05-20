@@ -50,7 +50,7 @@ $skin_colors = $this->db_worker->get_skin_colors();
 
   <input type="text" name="price" placeholder="Цена здесь"><br/>
 
-  <input type="submit" name="" value="Продать">
+  <input type="submit" value="Продать">
 
 
 </form>

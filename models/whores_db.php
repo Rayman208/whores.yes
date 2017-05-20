@@ -85,7 +85,41 @@ class database
           $query_result =  mysql_query("INSERT INTO `girls_services` (`id_girl`, `id_service`) VALUES ('{$girlid}','{$service_id}')");
         }
     }
+  }
 
+  public function get_all_girls()
+  {
+    $query_result = mysql_query("SELECT * FROM `girls`");
+    $data = array();
+    while ($curret_row = mysql_fetch_assoc($query_result))
+    {
+        $data[] = $curret_row;
+    }
+    return $data;
+  }
+  public function get_selected_girl($girlid)
+  {
+    $girl = array();
+
+    $query_result = mysql_query("SELECT g.id, g.name, g.photo_link, g.age, g.height, g.weight, g.boobs, h.name AS hair_colors, b.name AS body_types, s.name AS skin_colors, `price`, q.name AS quality_categories FROM girls g
+INNER JOIN hair_colors h ON g.hair_color=h.id
+INNER JOIN body_types b ON g.body_type=b.id
+INNER JOIN skin_colors s ON g.skin_color=s.id
+INNER JOIN quality_categories q ON g.quality_category=q.id
+WHERE g.id='{$girlid}'");
+    $data = mysql_fetch_assoc($query_result);
+
+    $query_result = mysql_query("SELECT * FROM `girls_services` WHERE `id_girl`='{$girlid}'");
+    $services = array();
+    while ($curret_row = mysql_fetch_assoc($query_result))
+    {
+        $services[] = $curret_row;
+    }
+
+    $girl[] = $data;
+    $girl[] = $services;
+
+    return $girl;
   }
 }
 ?>
