@@ -7,7 +7,7 @@ $skin_colors = $this->db_worker->get_skin_colors();
 ?>
 
 <h2>Добавить девочку</h2>
-<form action="" method="post">
+<form action="\views\pages\add.php" method="post">
   <input type="text" name="name" placeholder="Имя здесь"><br/>
   <input type="text" name="age" placeholder="Возраст здесь"><br/>
   <input type="text" name="hieght" placeholder="Рост здесь"><br/>
@@ -44,7 +44,8 @@ $skin_colors = $this->db_worker->get_skin_colors();
   <br/>
 
   <?php for ($i=0; $i <count($services) ; $i++) { ?>
-    <label><input type="checkbox" name="services" value="<?=$services[$i]["id"]?>"/> <?=$services[$i]["name"]?></label><br/>
+    <?php $service_name="services".$i; ?>
+    <label><input type="checkbox" name="<?=$service_name?>" value="<?=$services[$i]["id"]?>"/> <?=$services[$i]["name"]?></label><br/>
   <?php } ?>
 
   <input type="text" name="price" placeholder="Цена здесь"><br/>
