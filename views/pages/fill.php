@@ -7,28 +7,28 @@ $skin_colors = $this->db_worker->get_skin_colors();
 ?>
 
 <h2>Добавить девочку</h2>
-<form action="\views\pages\add.php" method="post">
+<form action="/sell/add" method="post">
   <input type="text" name="name" placeholder="Имя здесь"><br/>
   <input type="text" name="age" placeholder="Возраст здесь"><br/>
-  <input type="text" name="hieght" placeholder="Рост здесь"><br/>
+  <input type="text" name="height" placeholder="Рост здесь"><br/>
   <input type="text" name="weight" placeholder="Вес здесь"><br/>
   <input type="text" name="boobs" placeholder="Размер груди здесь"><br/>
 
-  <select>
+  <select name="hair_colors">
   <?php for ($i=0; $i <count($hair_colors) ; $i++) { ?>
     <option value="<?=$hair_colors[$i]["id"]?>"><?=$hair_colors[$i]["name"]?></option>
   <?php } ?>
   </select>
   <br/>
 
-  <select>
+  <select name="body_types">
   <?php for ($i=0; $i <count($body_types) ; $i++) { ?>
     <option value="<?=$body_types[$i]["id"]?>"><?=$body_types[$i]["name"]?></option>
   <?php } ?>
   </select>
   <br/>
 
-  <select>
+  <select name="skin_colors">
   <?php for ($i=0; $i <count($skin_colors) ; $i++) { ?>
     <option value="<?=$skin_colors[$i]["id"]?>"><?=$skin_colors[$i]["name"]?></option>
   <?php } ?>
@@ -36,7 +36,7 @@ $skin_colors = $this->db_worker->get_skin_colors();
   <br/>
 
 
-  <select>
+  <select name="quality_categories">
   <?php for ($i=0; $i <count($quality_categories) ; $i++) { ?>
     <option value="<?=$quality_categories[$i]["id"]?>"><?=$quality_categories[$i]["name"]?></option>
   <?php } ?>

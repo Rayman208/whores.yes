@@ -12,5 +12,9 @@ class sell
   {
     $this->view_worker->render("fill");
   }
+  public function add()
+  {
+    $this->view_worker->render("add");
+  }
 }
 ?>
