@@ -109,7 +109,10 @@ INNER JOIN quality_categories q ON g.quality_category=q.id
 WHERE g.id='{$girlid}'");
     $data = mysql_fetch_assoc($query_result);
 
-    $query_result = mysql_query("SELECT * FROM `girls_services` WHERE `id_girl`='{$girlid}'");
+    $query_result = mysql_query("SELECT s.name
+      FROM girls_services gs
+INNER JOIN services s ON gs.id_service=s.id
+WHERE gs.id_girl='{$girlid}'");
     $services = array();
     while ($curret_row = mysql_fetch_assoc($query_result))
     {
