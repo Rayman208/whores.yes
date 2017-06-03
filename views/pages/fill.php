@@ -52,5 +52,4 @@ $skin_colors = $this->db_worker->get_skin_colors();
 
   <input type="submit" value="Продать">
 
-
 </form>

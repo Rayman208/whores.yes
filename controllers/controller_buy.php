@@ -12,9 +12,16 @@ class buy
   {
     $this->view_worker->render("showall");
   }
+
   public function selected()
   {
     $this->view_worker->render("selected");
   }
+
+  public function search()
+  {
+    $this->view_worker->norender("search");
+  }
+  
 }
 ?>

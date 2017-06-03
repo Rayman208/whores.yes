@@ -5,6 +5,7 @@
 <title></title>
 <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="\views\template\style.css">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
 </head>
 <body>
 <div id="wrapper">

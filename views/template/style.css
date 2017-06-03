@@ -20,3 +20,17 @@
 .navitem:hover{
   background:#772168;
 }
+
+.left-side{
+  display: inline-block;
+  float: left;
+  width: 30%;
+  min-height: 500px;
+}
+
+.right-side{
+  display: inline-block;
+  float: left;
+  width: 70%;
+  min-height: 500px;
+}

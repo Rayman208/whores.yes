@@ -14,6 +14,12 @@ class view
     require 'pages\\'.$markup_name.'.php';
     require 'template\bottom_side.php';
   }
+
+  public function norender($markup_name)
+  {
+    require 'pages\\'.$markup_name.'.php';
+  }
+
 }
 
 ?>

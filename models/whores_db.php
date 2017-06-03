@@ -97,6 +97,43 @@ class database
     }
     return $data;
   }
+
+  public function get_search_girls($params)
+  {
+    $query = "";
+
+    if(strlen($params["name"])!=0)
+    {
+      if(strlen($query)!=0) { $query.="AND "; }
+      $query .="`name` LIKE '%".$params["name"]."%' ";
+    }
+    if(strlen($params["age_min"])!=0 && strlen($params["age_max"])!=0 )
+    {
+      if(strlen($query)!=0) { $query.="AND "; }
+      $query .="`age` BETWEEN ".$params["age_min"]." AND ".$params["age_max"]." ";
+    }
+
+
+    if(strlen($query)==0)
+    {
+        $query = "SELECT * FROM `girls` WHERE `id`='-1'";
+    }
+    else
+    {
+        $query = "SELECT * FROM `girls` WHERE ".$query;
+    }
+
+    $query_result = mysql_query($query);
+    $data = array();
+    while ($curret_row = mysql_fetch_assoc($query_result))
+    {
+        $data[] = $curret_row;
+    }
+    return $data;
+  }
+
+
+
   public function get_selected_girl($girlid)
   {
     $girl = array();
